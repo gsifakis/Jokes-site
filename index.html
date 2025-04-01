@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Just an experimental site to test out some basic Javascript. Go ahead and get a joke though, hopefully it puts a smile on your face"
+        />
+        <meta name="robots" content="noindex, nofollow" />
+        <!-- <meta name="keywords" content=""> -->
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- font-awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="icon" href="./images/favicon.png" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Random Jokes</title>
+    </head>
+    <body class="body">
+        <!-- Potential header and menu bar -->
+        <header>
+            <div class="header">
+                <h3 class="theme-title">Dark</h3>
+                <i id="themeBtn" class="fa-solid fa-lightbulb"></i>
+            </div>
+        </header>
+
+        <!-- Page Heading  -->
+        <div class="heading">
+            <div class="container">
+                <img
+                    src="./images/laughing-7221581_1280.png"
+                    alt="joke emoji"
+                />
+                <h1>Jokes</h1>
+            </div>
+        </div>
+
+        <!-- Description Box -->
+        <div class="description">
+            <div class="container">
+                <p>
+                    Welcome to my prank site. This site was created purely for
+                    me to experiment on. My purpose was to test some simple JS
+                    that i learned like fetch basics , and alternating the
+                    contents of the page. Potentialy in the future I might add
+                    some local storage functionality to just get a bit more
+                    accusomed with it too. Thank you for reading this far and
+                    with no further ado just fetch a joke and hopefully have a
+                    laugh!
+                </p>
+            </div>
+        </div>
+
+        <!-- Btns -->
+        <div class="btns">
+            <div class="btn-container">
+                <h3>Get a random Chuck Norris Joke!</h3>
+                <button id="btn-chuck" class="btn">Get Joke</button>
+            </div>
+            <div class="btn-container">
+                <h3>Get a random Dad Joke!</h3>
+                <button id="btn-dad" class="btn dad">Get Joke</button>
+            </div>
+        </div>
+
+        <!-- Joke Box -->
+
+        <div class="joke-display container"></div>
+
+        <footer class="footer">
+            <div class="icons-box">
+                <a href=""><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                <a href="https://github.com/gsifakis" target="_blank"
+                    ><i class="fa-brands fa-github fa-2xl"></i
+                ></a>
+            </div>
+            <div>&copy; 2025 Georgios Sifakis All rights reserved</div>
+        </footer>
+
+        <script src="/script.js"></script>
+    </body>
+</html>

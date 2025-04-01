@@ -2,8 +2,6 @@ const icons = document.querySelectorAll("i");
 const body = document.querySelector("body");
 const btns = document.querySelectorAll(".btn");
 const themeTitle = document.querySelector(".theme-title");
-const jokedisplay = document.querySelector(".joke-display");
-const jokep = document.createElement("p");
 
 async function fetchDadJoke() {
     let config = {
@@ -14,26 +12,26 @@ async function fetchDadJoke() {
 
     await fetch("https://icanhazdadjoke.com/", config)
         .then((res) => res.json())
-        .then((data) => (jokedisplay.appendChild(jokep).innerHTML = data.joke));
+        .then((data) => displayJoke(data.joke))
+        .catch((error) => alert(error));
 }
 
 async function fetchChuckJoke() {
     await fetch("https://api.chucknorris.io/jokes/random")
         .then((res) => res.json())
-        .then((data) => {
-            jokedisplay.appendChild(jokep).innerHTML = data.value;
-        });
+        .then((data) => displayJoke(data.value))
+        .catch((error) => alert(error));
 }
 
-// function displayJoke(e) {
-//     console.log(e.target);
+function displayJoke(data) {
+    const jokedisplay = document.querySelector(".joke-display");
 
-//     if (e.target.classList.contains(".dad")) {
-//         jokedisplay.children[0].innerHTML = fetchDadJoke();
-//     } else {
-//         jokedisplay.children[0].innerHTML = fetchChuckJoke();
-//     }
-// }
+    // has to do this else every time display joke is called a new p would be added to the dom
+    jokedisplay.innerHTML = "";
+    const jokep = document.createElement("p");
+
+    jokedisplay.appendChild(jokep).innerHTML = data;
+}
 
 document.getElementById("themeBtn").addEventListener("click", () => {
     for (item of icons) {

@@ -1,39 +1,60 @@
-const icons = document.querySelectorAll("i");
-const body = document.querySelector("body");
-const btns = document.querySelectorAll(".btn");
-const themeTitle = document.querySelector(".theme-title");
+const global = {
+    urls: {
+        chuckPath: "https://api.chucknorris.io/jokes/random",
+        dadPath: "https://icanhazdadjoke.com/",
+    },
+};
 
-async function fetchDadJoke() {
+async function fetchJoke(path) {
     let config = {
         headers: {
             Accept: "application/json",
         },
     };
 
-    await fetch("https://icanhazdadjoke.com/", config)
-        .then((res) => res.json())
-        .then((data) => displayJoke(data.joke))
-        .catch((error) => alert(error));
+    try {
+        const response = await fetch(path, config);
+        if (response.ok) {
+            return (resData = await response.json());
+        } else {
+            if (response.status === 404) {
+                throw new Error("404, Not found");
+            } else {
+                throw new Error(response.status, "Sth went wrong");
+            }
+        }
+    } catch (error) {
+        console.error("Fetch", error);
+    }
 }
 
-async function fetchChuckJoke() {
-    await fetch("https://api.chucknorris.io/jokes/random")
-        .then((res) => res.json())
-        .then((data) => displayJoke(data.value))
-        .catch((error) => alert(error));
-}
+async function displayJoke2(e) {
+    let data;
+    if (e.target.classList.contains("dad")) {
+        data = await fetchJoke(global.urls.dadPath);
+    } else {
+        data = await fetchJoke(global.urls.chuckPath);
+    }
 
-function displayJoke(data) {
     const jokedisplay = document.querySelector(".joke-display");
 
     // has to do this else every time display joke is called a new p would be added to the dom
     jokedisplay.innerHTML = "";
     const jokep = document.createElement("p");
 
-    jokedisplay.appendChild(jokep).innerHTML = data;
+    if (e.target.classList.contains("dad")) {
+        jokedisplay.appendChild(jokep).innerHTML = data.joke;
+    } else {
+        jokedisplay.appendChild(jokep).innerHTML = data.value;
+    }
 }
 
-document.getElementById("themeBtn").addEventListener("click", () => {
+function changeTheme() {
+    const icons = document.querySelectorAll("i");
+    const body = document.querySelector("body");
+    const btns = document.querySelectorAll(".btn");
+    const themeTitle = document.querySelector(".theme-title");
+
     for (item of icons) {
         item.classList.toggle("light-text");
         item.classList.add("transition");
@@ -51,7 +72,14 @@ document.getElementById("themeBtn").addEventListener("click", () => {
 
     body.classList.toggle("body-dark");
     body.classList.add("transition");
-});
+}
 
-document.getElementById("btn-dad").addEventListener("click", fetchDadJoke);
-document.getElementById("btn-chuck").addEventListener("click", fetchChuckJoke);
+function init() {
+    document.getElementById("themeBtn").addEventListener("click", changeTheme);
+    document.getElementById("btn-dad").addEventListener("click", displayJoke2);
+    document
+        .getElementById("btn-chuck")
+        .addEventListener("click", displayJoke2);
+}
+
+window.addEventListener("DOMContentLoaded", init);

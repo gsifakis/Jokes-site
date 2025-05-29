@@ -3,14 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="Just an experimental site to test out some basic Javascript. Go ahead and get a joke though, hopefully it puts a smile on your face"
-        />
-        <meta name="robots" content="noindex, nofollow" />
-        <!-- <meta name="keywords" content=""> -->
-
-        <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -33,10 +25,9 @@
         />
         <link rel="icon" href="./images/favicon.png" />
         <link rel="stylesheet" href="style.css" />
-        <title>Random Jokes</title>
+        <title>Favourite Jokes</title>
     </head>
     <body>
-        <!-- Potential header and menu bar -->
         <header>
             <div class="header container">
                 <nav class="menu-links">
@@ -50,45 +41,14 @@
             </div>
         </header>
 
-        <!-- Page Heading  -->
         <div class="heading">
             <div class="container">
-                <h1>Random Jokes</h1>
+                <h1>Saved Jokes</h1>
             </div>
         </div>
 
-        <!-- Description Box -->
-        <div class="description">
-            <div class="container">
-                <p>
-                    Welcome to my jokes site. This site was created purely for
-                    me to experiment on. My purpose was to test some simple JS
-                    that i learned like fetch basics , and alternating the
-                    contents of the page. Potentialy in the future I might add
-                    some local storage functionality to just get a bit more
-                    accusomed with it too. Thank you for reading this far and
-                    with no further ado just fetch a joke and hopefully have a
-                    laugh!
-                </p>
-            </div>
-        </div>
-
-        <!-- Btns -->
-        <div class="btns">
-            <div class="btn-container">
-                <h3>Get a random Chuck Norris Joke!</h3>
-                <button id="btn-chuck" class="btn">Get Joke</button>
-            </div>
-            <div class="btn-container">
-                <h3>Get a random Dad Joke!</h3>
-                <button id="btn-dad" class="btn dad">Get Joke</button>
-            </div>
-        </div>
-
-        <!-- Joke Box -->
-
-        <div class="container">
-            <div class="joke-display"></div>
+        <div id="saved-jokes" class="container">
+            <div class="saved-jokes-box"></div>
         </div>
 
         <footer class="footer">

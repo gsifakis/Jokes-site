@@ -33,6 +33,7 @@ body {
     color: #fff;
 }
 a {
+    color: #000;
     font-size: 1.5rem;
     text-decoration: none;
 }
@@ -102,12 +103,28 @@ h3 {
 .light-text:hover {
     color: #f2f2f2;
 }
+
+.link-active {
+    display: none;
+}
+
 /* Header */
 .header {
-    margin: 10px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+
+    .menu-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .themeBtn-container {
+        display: flex;
+        gap: 1rem;
+    }
 
     h3 {
         font-size: 1.4rem;
@@ -156,12 +173,16 @@ h3 {
 
 /* Joke Box */
 .joke-display {
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
     max-width: 1200px;
     padding: 1rem;
     margin: 0 auto 8rem;
     text-align: center;
     font-size: 1.1rem;
     border: 1px solid;
+    display: none;
 }
 
 .joke-display p {
@@ -185,6 +206,51 @@ h3 {
 
 .icons-box a {
     margin: 0px 5px;
+}
+
+/* Favourites.css */
+
+#saved-jokes {
+    margin: 1rem auto 14rem;
+}
+
+.saved-jokes-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.joke-box {
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+    border: 1px solid;
+}
+.joke-paragraph {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.delete-btn:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.saved-message {
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
 }
 
 /* media queries */

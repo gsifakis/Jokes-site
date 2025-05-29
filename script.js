@@ -57,11 +57,9 @@ function changeTheme() {
 
     for (item of icons) {
         item.classList.toggle("light-text");
-        item.classList.add("transition");
     }
     for (button of btns) {
         button.classList.toggle("btn-dark");
-        button.classList.add("transition");
     }
 
     if (icons[0].classList.contains("light-text")) {
@@ -71,7 +69,7 @@ function changeTheme() {
     }
 
     body.classList.toggle("body-dark");
-    body.classList.add("transition");
+    // body.classList.add("transition");
 }
 
 function init() {

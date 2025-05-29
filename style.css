@@ -22,7 +22,6 @@ body {
         rgba(211, 200, 200, 1)
     );
     scroll-behavior: smooth;
-    /* transition: all 1.5s; */
 }
 
 .body-dark {
@@ -32,9 +31,7 @@ body {
         var(--dark-secondary-color)
     );
     color: #fff;
-    /* transition: all 1.5s; */
 }
-
 a {
     font-size: 1.5rem;
     text-decoration: none;
@@ -43,14 +40,13 @@ a {
 i {
     font-size: 2rem;
     color: var(--primary-color);
-    /* transition: all 1.5s; */
+    transition: all 0.3s;
 }
 
 i:hover {
     cursor: pointer;
     color: var(--tetriary-color);
-    transform: scale(1.4);
-    transition: all 0.3s;
+    transform: scale(1.3);
 }
 
 ul {
@@ -69,8 +65,8 @@ h3 {
 
 /* Utilities */
 .container {
-    margin: 10px auto;
-    padding: 10px;
+    margin: 1rem auto;
+    padding: 1rem 4rem;
     max-width: 1200px;
     max-height: 600px;
 }
@@ -83,13 +79,12 @@ h3 {
     border: none;
     border-radius: 25px;
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 .btn:hover {
     border: solid 1px var(--tetriary-color);
     background-color: var(--secondary-color);
-    transform: scale(1.1);
-    transition: all 0.5s;
 }
 
 .btn-dark {
@@ -98,8 +93,6 @@ h3 {
 }
 .btn-dark:hover {
     background-color: var(--dark-secondary-color);
-    transform: scale(1.1);
-    transition: all 0.5s;
 }
 
 /* Solely used for the fontAwesome links */
@@ -125,10 +118,6 @@ h3 {
     i {
         padding: 10px;
     }
-}
-
-.transition {
-    transition: all 1.5s;
 }
 
 /* heading */
@@ -160,29 +149,29 @@ h3 {
 }
 
 .btn-container {
-    margin: 10px;
-    padding: 10px 20px;
+    margin: 1rem;
+    padding: 1rem 2rem;
     text-align: center;
 }
 
 /* Joke Box */
 .joke-display {
-    padding: 10px;
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 0 auto 8rem;
     text-align: center;
-    margin-bottom: 200px;
     font-size: 1.1rem;
+    border: 1px solid;
 }
 
 .joke-display p {
-    border: 1px solid;
-    margin: 10px;
-    padding: 20px 10px;
+    padding: 1rem;
 }
 
 /* Footer */
 .footer {
-    margin: 20px auto;
-    padding: 20px;
+    margin: 1rem auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

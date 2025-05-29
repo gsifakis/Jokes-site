@@ -28,6 +28,10 @@ async function fetchJoke(path) {
 function activePath() {
     const menuLinks = document.querySelectorAll(".menu-link");
     for (let link of menuLinks) {
+        if (global.pathName === "/") {
+            menuLinks[0].classList.add("link-active");
+            break;
+        }
         if (link.getAttribute("href") === global.pathName) {
             link.classList.add("link-active");
         }
